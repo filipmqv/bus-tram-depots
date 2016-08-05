@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="403.0" maxWidth="459.0" prefHeight="230.0" prefWidth="414.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="btd.view.DriverEditDialog">
+   <children>
+      <HBox layoutX="643.0" layoutY="13.0" spacing="5.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Button fx:id="okBtn" layoutX="643.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleOk" text="OK" />
+            <Button layoutX="682.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleCancel" text="Anuluj" />
+         </children>
+      </HBox>
+      <GridPane layoutX="20.0" layoutY="23.0" prefHeight="180.0" prefWidth="266.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Label text="Imię*" GridPane.halignment="RIGHT">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin></Label>
+            <Label text="Nazwisko*" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin></Label>
+            <Label text="Pojazd" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin></Label>
+            <Label text="Numer linii" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin></Label>
+            <Label text="Prawo jazdy*" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin></Label>
+            <Label text="Zajezdnia*" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="imieField" GridPane.columnIndex="1" />
+            <TextField fx:id="nazwiskoField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ComboBox fx:id="prawoJazdyComboBox" onAction="#handleTypChange" prefHeight="25.0" prefWidth="236.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <ComboBox fx:id="zajezdniaComboBox" disable="true" onAction="#handleZajezdniaChange" prefHeight="25.0" prefWidth="224.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <ComboBox fx:id="pojazdComboBox" disable="true" prefHeight="25.0" prefWidth="280.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <ComboBox fx:id="numerComboBox" disable="true" prefHeight="25.0" prefWidth="240.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="125.0" minWidth="90.0" prefWidth="90.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="333.0" minWidth="10.0" prefWidth="212.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <Label layoutX="105.0" layoutY="199.0" text="* pole wymagane" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="199.0" />
+   </children>
+</AnchorPane>

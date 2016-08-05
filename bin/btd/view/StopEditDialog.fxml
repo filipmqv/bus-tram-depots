@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane onMouseMoved="#drawFirst" prefHeight="434.0" prefWidth="746.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="btd.view.StopEditDialog">
+   <children>
+      <GridPane layoutX="27.0" layoutY="61.0" prefHeight="30.0" prefWidth="216.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Label text="Nazwa" GridPane.halignment="RIGHT">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin></Label>
+            <TextField fx:id="nazwaField" prefHeight="25.0" prefWidth="146.0" GridPane.columnIndex="1" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="128.0" minWidth="50.0" prefWidth="55.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="333.0" minWidth="10.0" prefWidth="202.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <HBox layoutX="643.0" layoutY="13.0" spacing="5.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Button layoutX="643.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleOk" text="OK" />
+            <Button layoutX="682.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleCancel" text="Anuluj" />
+         </children>
+      </HBox>
+      <ScrollPane layoutX="398.0" layoutY="14.0" prefHeight="414.0" prefWidth="495.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="50.0">
+         <content>
+            <AnchorPane fx:id="przystanekAddAnchorPane2" maxHeight="2560.0" maxWidth="2560.0" minHeight="300.0" minWidth="300.0" prefHeight="2560.0" prefWidth="2560.0">
+               <children>
+                  <Canvas fx:id="przystanekAddCanvas2" height="2560.0" width="2560.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <Label layoutX="300.0" layoutY="17.0" text="Kliknij na mapę aby ustawić współrzędne przystanku" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="17.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="85.0" prefWidth="511.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="btd.view.DepotEditDialog">
+   <children>
+      <GridPane layoutX="27.0" layoutY="61.0" prefHeight="60.0" prefWidth="384.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Label text="Typ" GridPane.halignment="RIGHT">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin></Label>
+            <Label text="Adres" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin></Label>
+            <TextField fx:id="adresField" promptText="&lt;Ulica&gt; &lt;Numer budynku&gt;, &lt;Kod&gt; &lt;Miasto&gt;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ComboBox fx:id="typComboBox" prefHeight="25.0" prefWidth="202.0" GridPane.columnIndex="1" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="128.0" minWidth="42.0" prefWidth="42.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="342.0" minWidth="10.0" prefWidth="342.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <HBox layoutX="643.0" layoutY="13.0" spacing="5.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Button layoutX="643.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleOk" text="OK" />
+            <Button layoutX="682.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleCancel" text="Anuluj" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

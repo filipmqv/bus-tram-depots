@@ -1,0 +1,15 @@
+public void connectToDB() {
+		Properties connectionProps = new Properties();
+		connectionProps.put("user", "inf109765");
+		connectionProps.put("password", "haslo112");
+		try {
+			conn = DriverManager.getConnection(
+					"jdbc:oracle:thin:@localhost:1521/xe",
+					connectionProps);
+			System.out.println("Po³¹czono z baz¹ danych");
+		} catch (SQLException ex) {
+			Logger.getLogger(MainApp.class.getName()).log(Level.SEVERE,
+					"nie uda³o siê po³¹czyæ z baz¹ danych", ex);
+			System.exit(-1);
+		}
+    }

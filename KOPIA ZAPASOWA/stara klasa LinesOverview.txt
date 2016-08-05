@@ -1,0 +1,74 @@
+package btd.view;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import btd.MainApp;
+import btd.model.Line;
+
+public class LinesOverview {
+    @FXML
+    private TableView<Line> liniaTab;
+    @FXML
+    private TableColumn<Line, Number> numerCol;
+    @FXML
+    private TableColumn<Line, String> typCol;
+
+    @FXML
+    private Label numerLabel;
+    @FXML
+    private Label typLabel;
+    @FXML
+    private Label dlugoscLabel;
+    @FXML
+    private Label czestotliwoscKursowLabel;
+    @FXML
+    private Label czasPrzejazduLabel;
+    @FXML
+    private Label liczbaPojazdowLabel;
+
+    // Reference to the main application.
+    private MainApp mainApp;
+    
+    // Data with all objects
+    private ObservableList<Line> linesData = FXCollections.observableArrayList();
+
+    /**
+     * The constructor.
+     * The constructor is called before the initialize() method.
+     */
+    public LinesOverview() {
+    	// Add some sample data
+    	linesData.add(new Line(1, "T"));
+    	linesData.add(new Line(2, "T"));
+    }
+
+    /**
+     * Initializes the controller class. This method is automatically called
+     * after the fxml file has been loaded.
+     */
+    @FXML
+    private void initialize() {
+        // Initialize the line table with the two columns.
+    	numerCol.setCellValueFactory(cellData -> cellData.getValue().numerProperty());
+    	typCol.setCellValueFactory(cellData -> cellData.getValue().typProperty());
+    	
+    	// Add observable list data to the table
+        liniaTab.setItems(linesData);
+    	System.out.println("init linesOverwiewController");
+    }
+
+    /**
+     * Is called by the main application to give a reference back to itself.
+     * 
+     * @param mainApp
+     */
+    public void setMainApp(MainApp mainApp) {
+        this.mainApp = mainApp;
+
+        
+    }
+}

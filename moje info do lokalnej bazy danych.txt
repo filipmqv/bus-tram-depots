@@ -1,0 +1,22 @@
+has³o: haslo112
+
+jdbc:oracle:thin:@localhost:1521/xe
+
+SQL Developer as an Alternative for Creating Database Users:
+If you have experience with SQL Developer, you can use it instead of the command line to create a database user, as follows:
+Create a database connection for the SYSTEM user.
+Open that database connection for the SYSTEM user.
+Right-click the Other Users node in the Connections navigator under that connection.
+Select Create User, and specify the necessary information. (Under System Privileges, grant ALTER SESSION, CREATE SESSION, CREATE DATABASE LINK, CREATE MATERIALIZED VIEW, CREATE PROCEDURE, CREATE PUBLIC SYNONYM, CREATE ROLE, CREATE SEQUENCE, CREATE SYNONYM, CREATE TABLE, CREATE TRIGGER, CREATE TYPE, CREATE VIEW, and UNLIMITED TABLESPACE.)
+
+czyli to nasze adminlab2... zamien na 'localhost'
+
+start database (menu start)
+
+admin:
+username: system
+password: haslo112
+
+normal user:
+username: INF109765
+password: haslo112

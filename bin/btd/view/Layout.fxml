@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane minHeight="400.0" minWidth="600.0" prefHeight="533.0" prefWidth="763.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="btd.view.Layout">
+   <center>
+      <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab fx:id="linesTabPane1" onSelectionChanged="#showLineMap" text="LINIE">
+            <content>
+            
+					<AnchorPane prefHeight="536.0" prefWidth="765.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+					   <children>
+					      <SplitPane dividerPositions="0.18872870249017037" layoutX="87.0" layoutY="14.0" prefHeight="455.0" prefWidth="682.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+					        <items>
+					          <AnchorPane maxWidth="141.0" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+					               <children>
+					                  <TableView fx:id="liniaTab1" layoutX="37.0" layoutY="76.0" prefHeight="374.0" prefWidth="141.0" AnchorPane.bottomAnchor="128.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+					                    <columns>
+					                      <TableColumn fx:id="numerCol1" prefWidth="75.0" text="Numer" />
+					                      <TableColumn fx:id="typCol1" prefWidth="75.0" text="Typ" />
+					                    </columns>
+					                     <columnResizePolicy>
+					                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+					                     </columnResizePolicy>
+					                  </TableView>
+					                  <VBox layoutX="14.0" layoutY="459.0" spacing="5.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+					                     <children>
+                                          <Label text="Szukaj:" />
+                                          <TextField fx:id="szukajTextField1" prefHeight="25.0" prefWidth="113.0" />
+					                        <Label layoutX="14.0" layoutY="365.0" text="Pokaż linie:" />
+					                        <CheckBox fx:id="tramCheckBox1" layoutX="14.0" layoutY="390.0" mnemonicParsing="false" onAction="#tramCheckBox1Chenged" selected="true" text="tramwajowe" />
+					                        <CheckBox fx:id="busCheckBox1" layoutX="14.0" layoutY="416.0" mnemonicParsing="false" onAction="#busCheckBox1Chenged" selected="true" text="autobusowe" />
+					                     </children>
+					                  </VBox>
+					               </children>
+					            </AnchorPane>
+					          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+					               <children>
+					                  <GridPane layoutX="40.0" layoutY="137.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="30.0">
+					                    <columnConstraints>
+					                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="125.0" minWidth="57.0" prefWidth="75.0" />
+					                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="333.0" minWidth="10.0" prefWidth="73.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="333.0" minWidth="10.0" prefWidth="149.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="333.0" minWidth="10.0" prefWidth="52.0" />
+					                    </columnConstraints>
+					                    <rowConstraints>
+					                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					                    </rowConstraints>
+					                     <children>
+					                        <Label text="Numer" GridPane.halignment="RIGHT">
+                                             <GridPane.margin>
+                                                <Insets />
+                                             </GridPane.margin></Label>
+					                        <Label text="Typ" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+					                        <Label text="Długość (km)" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+					                        <Label text="Częstotliwość kursów (min)" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
+					                        <Label text="Czas przejazdu (min)" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+					                        <Label text="Liczba kierowców" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+					                        <Label fx:id="numerLabel1" text="Label" GridPane.columnIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin></Label>
+					                        <Label fx:id="typLabel1" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin></Label>
+					                        <Label fx:id="dlugoscLabel1" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin></Label>
+					                        <Label fx:id="czestotliwoscKursowLabel1" text="Label" GridPane.columnIndex="3">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin></Label>
+					                        <Label fx:id="czasPrzejazduLabel1" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin></Label>
+					                        <Label fx:id="liczbaPojazdowLabel1" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin></Label>
+					                     </children>
+					                  </GridPane>
+                                    <ScrollPane prefHeight="399.0" prefWidth="334.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="220.0" AnchorPane.topAnchor="125.0">
+                                       <content>
+                                          <AnchorPane fx:id="liniaAnchorPane1" maxHeight="2560.0" maxWidth="2560.0" minHeight="300.0" minWidth="300.0" prefHeight="2560.0" prefWidth="2560.0">
+                                             <children>
+                                                <Canvas fx:id="liniaCanvas1" height="2560.0" width="2560.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </ScrollPane>
+					                  <TableView fx:id="trasaTab1" layoutX="294.0" layoutY="58.0" prefHeight="434.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="58.0">
+					                    <columns>
+					                      <TableColumn fx:id="lpCol1" maxWidth="22.0" prefWidth="22.0" resizable="false" text="Lp" />
+					                      <TableColumn fx:id="czasCol1" maxWidth="100.0" minWidth="0.0" prefWidth="30.0" resizable="false" text="Czas" />
+					                        <TableColumn fx:id="nazwaCol1" maxWidth="147.0" prefWidth="147.0" text="Nazwa" />
+					                    </columns>
+					                     <columnResizePolicy>
+					                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+					                     </columnResizePolicy>
+					                  </TableView>
+					                  <Label layoutX="14.0" layoutY="6.0" text="SZCZEGÓŁY" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="3.0">
+					                     <font>
+					                        <Font name="System Bold" size="14.0" />
+					                     </font>
+					                  </Label>
+					                  <Label layoutX="303.0" layoutY="5.0" text="TRASA" AnchorPane.rightAnchor="165.0" AnchorPane.topAnchor="3.0">
+					                     <font>
+					                        <Font name="System Bold" size="14.0" />
+					                     </font>
+					                  </Label>
+                                    <VBox spacing="3.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="130.0">
+                                       <children>
+                                          <Button fx:id="liniaAnchorPlus1" layoutX="23.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleLiniaAnchorPlus1Clicked" text="+" />
+                                          <Button fx:id="liniaAnchorMinus1" layoutX="36.0" layoutY="63.0" mnemonicParsing="false" onAction="#handleLiniaAnchorMinus1Clicked" prefWidth="25.0" text="-" />
+                                       </children>
+                                    </VBox>
+                                    <HBox layoutX="170.0" layoutY="1.0" spacing="5.0" AnchorPane.rightAnchor="220.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Button layoutX="107.0" layoutY="1.0" mnemonicParsing="false" onAction="#handleNewLine" text="Nowa linia" AnchorPane.topAnchor="0.0" />
+                                          <Button layoutX="185.0" mnemonicParsing="false" onAction="#handleEditLineFromLineTab" text="Edytuj" />
+                                          <Button layoutX="281.0" mnemonicParsing="false" onAction="#handleDeleteLineFromLineTab" text="Usuń" />
+                                       </children>
+                                    </HBox>
+                                    <ComboBox fx:id="kierunekComboBox1" layoutX="404.0" layoutY="25.0" onAction="#handleKierunekChange" prefHeight="25.0" prefWidth="200.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="25.0" />
+                                    <Label layoutX="530.0" layoutY="4.0" text="Kierunek (do):" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="4.0" />
+					               </children>
+					            </AnchorPane>
+					        </items>
+					      </SplitPane>
+					   </children>
+					</AnchorPane>              
+					
+            </content>
+          </Tab>
+          <Tab onSelectionChanged="#showStopMap" text="PRZYSTANKI">
+            <content>
+              
+				<AnchorPane prefHeight="536.0" prefWidth="765.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+				   <children>
+				      <SplitPane dividerPositions="0.18872870249017037" layoutX="87.0" layoutY="14.0" prefHeight="455.0" prefWidth="682.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+				        <items>
+				          <AnchorPane maxWidth="250.0" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+				               <children>
+				                  <TableView fx:id="przystanekTab2" layoutX="37.0" layoutY="76.0" prefHeight="439.0" prefWidth="200.0" AnchorPane.bottomAnchor="63.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+				                    <columns>
+				                      <TableColumn fx:id="idPrzystankuCol2" maxWidth="40.0" minWidth="40.0" prefWidth="40.0" text="ID" />
+				                      <TableColumn fx:id="nazwaCol2" prefWidth="150.0" text="Nazwa" />
+				                    </columns>
+				                     <columnResizePolicy>
+				                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+				                     </columnResizePolicy>
+				                  </TableView>
+                                    <VBox layoutX="14.0" layoutY="389.0" spacing="5.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                                       <children>
+                                          <Label text="Szukaj:" />
+                                          <TextField fx:id="szukajTextField2" prefHeight="25.0" prefWidth="113.0" />
+                                       </children>
+                                    </VBox>
+				               </children>
+				            </AnchorPane>
+				          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+				               <children>
+                                    <HBox layoutX="120.0" layoutY="1.0" spacing="5.0" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Button layoutX="107.0" layoutY="1.0" mnemonicParsing="false" onAction="#handleNewStop" text="Nowy przystanek" AnchorPane.topAnchor="0.0" />
+                                          <Button layoutX="185.0" mnemonicParsing="false" onAction="#handleEditStop" text="Edytuj" />
+                                          <Button layoutX="281.0" mnemonicParsing="false" onAction="#handleDeleteStop" text="Usuń" />
+                                       </children>
+                                    </HBox>
+				                  <GridPane layoutX="40.0" layoutY="137.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="30.0">
+				                    <columnConstraints>
+				                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="125.0" minWidth="44.0" prefWidth="44.0" />
+				                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="333.0" minWidth="10.0" prefWidth="115.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="333.0" minWidth="10.0" prefWidth="90.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="50.0" minWidth="10.0" prefWidth="50.0" />
+				                    </columnConstraints>
+				                    <rowConstraints>
+				                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+				                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+				                    </rowConstraints>
+				                     <children>
+				                        <Label text="ID" GridPane.halignment="RIGHT" />
+				                        <Label text="Nazwa" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+				                        <Label text="Współrzędna X" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
+				                        <Label text="Współrzędna Y" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                                          <Label fx:id="idPrzystankuLabel2" text="Label" GridPane.columnIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin></Label>
+                                          <Label fx:id="nazwaLabel2" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin></Label>
+                                          <Label text="Label" GridPane.columnIndex="3" fx:id="xLabel2">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin></Label>
+                                          <Label fx:id="yLabel2" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin></Label>
+				                     </children>
+				                  </GridPane>
+				                  <ScrollPane layoutX="10.0" layoutY="93.0" prefHeight="399.0" prefWidth="334.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="93.0">
+				                    <content>
+				                      <AnchorPane fx:id="przystanekAnchorPane2" maxHeight="2560.0" maxWidth="2560.0" minHeight="300.0" minWidth="300.0" prefHeight="2560.0" prefWidth="2560.0">
+                                             <children>
+                                                <Canvas fx:id="przystanekCanvas2" height="2560.0" width="2560.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                             </children>
+				                        </AnchorPane>
+				                    </content>
+				                  </ScrollPane>
+                                    <VBox spacing="3.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="98.0">
+                                       <children>
+                                          <Button fx:id="przystanekAnchorPlus2" layoutX="23.0" layoutY="24.0" mnemonicParsing="false" onAction="#handlePrzystanekAnchorPlus2Clicked" text="+" />
+                                          <Button fx:id="przystanekAnchorMinus2" layoutX="36.0" layoutY="63.0" mnemonicParsing="false" onAction="#handlePrzystanekAnchorMinus2Clicked" prefWidth="25.0" text="-" />
+                                       </children>
+                                    </VBox>
+				                  <TableView fx:id="linesOnStopTab2" layoutX="294.0" layoutY="30.0" prefHeight="494.0" prefWidth="247.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="30.0">
+				                     <columnResizePolicy>
+				                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+				                     </columnResizePolicy>
+				                     <columns>
+				                        <TableColumn fx:id="numerCol2" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" text="Numer" />
+				                        <TableColumn fx:id="typCol2" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" text="Typ" />
+                                          <TableColumn prefWidth="75.0" text="Pasażerowie">
+                                             <columns>
+      				                        <TableColumn fx:id="wsiadajacyCol2" prefWidth="75.0" text="Wsiadający" />
+      				                        <TableColumn fx:id="wysiadajacyCol2" prefWidth="75.0" text="Wysiadający" />
+                                             </columns>
+                                          </TableColumn>
+				                     </columns>
+				                  </TableView>
+				                  <Label layoutX="14.0" layoutY="6.0" text="SZCZEGÓŁY" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="3.0">
+				                     <font>
+				                        <Font name="System Bold" size="14.0" />
+				                     </font>
+				                  </Label>
+				                  <Label layoutX="357.0" layoutY="3.0" text="LINIE NA TYM PRZYSTANKU" AnchorPane.rightAnchor="68.0" AnchorPane.topAnchor="3.0">
+				                     <font>
+				                        <Font name="System Bold" size="14.0" />
+				                     </font>
+				                  </Label>
+				               </children>
+				            </AnchorPane>
+				        </items>
+				      </SplitPane>
+				   </children>
+				</AnchorPane>
+
+            </content>
+          </Tab>
+            <Tab text="ZAJEZDNIE">
+              <content>
+                
+					<AnchorPane prefHeight="536.0" prefWidth="765.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+					   <children>
+					      <SplitPane dividerPositions="0.30275229357798167" layoutX="87.0" layoutY="14.0" prefHeight="455.0" prefWidth="682.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+					        <items>
+					          <AnchorPane maxWidth="350.0" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="217.0">
+					               <children>
+					                  <TableView fx:id="zajezdniaTab3" layoutX="37.0" layoutY="76.0" prefHeight="452.0" prefWidth="217.0" AnchorPane.bottomAnchor="128.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+					                    <columns>
+					                      <TableColumn fx:id="idZajezdniCol3" maxWidth="40.0" minWidth="40.0" prefWidth="40.0" text="ID" />
+					                      <TableColumn fx:id="typCol3" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" text="Typ" />
+					                        <TableColumn fx:id="adresCol3" minWidth="250.0" prefWidth="250.0" text="Adres" />
+					                    </columns>
+					                     <columnResizePolicy>
+					                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+					                     </columnResizePolicy>
+					                  </TableView>
+                                    <VBox spacing="5.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                                       <children>
+                                          <Label text="Szukaj:" />
+                                          <TextField fx:id="szukajTextField3" prefHeight="25.0" prefWidth="113.0" />
+                                          <Label layoutX="14.0" layoutY="365.0" text="Pokaż zajezdnie:" />
+                                          <CheckBox fx:id="tramCheckBox3" layoutX="14.0" layoutY="390.0" mnemonicParsing="false" onAction="#tramCheckBox3Chenged" selected="true" text="tramwajowe" />
+                                          <CheckBox fx:id="busCheckBox3" layoutX="14.0" layoutY="416.0" mnemonicParsing="false" onAction="#busCheckBox3Chenged" selected="true" text="autobusowe" />
+                                       </children>
+                                    </VBox>
+					               </children>
+					            </AnchorPane>
+					          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+					               <children>
+					                  <GridPane layoutX="40.0" layoutY="137.0" prefHeight="60.0" prefWidth="355.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="30.0">
+					                    <columnConstraints>
+					                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="125.0" minWidth="38.0" prefWidth="38.0" />
+					                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="333.0" minWidth="10.0" prefWidth="78.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="333.0" minWidth="10.0" prefWidth="42.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="333.0" minWidth="10.0" prefWidth="199.0" />
+					                    </columnConstraints>
+					                    <rowConstraints>
+					                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					                    </rowConstraints>
+					                     <children>
+					                        <Label text="ID" GridPane.halignment="RIGHT" />
+					                        <Label text="Typ" GridPane.columnIndex="2" GridPane.halignment="RIGHT" />
+					                        <Label text="Adres" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                                          <Label fx:id="idZajezdniLabel3" text="Label" GridPane.columnIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label fx:id="typLabel3" text="Label" GridPane.columnIndex="3">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label fx:id="adresLabel3" prefHeight="17.0" prefWidth="344.0" text="Label" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+					                     </children>
+					                  </GridPane>
+					                  <Label layoutX="14.0" layoutY="6.0" text="SZCZEGÓŁY" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="3.0">
+					                     <font>
+					                        <Font name="System Bold" size="14.0" />
+					                     </font>
+					                  </Label>
+                                    <HBox layoutX="206.0" layoutY="11.0" spacing="5.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Button layoutX="365.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleNewDepot" text="Nowa zajezdnia" />
+                                          <Button layoutX="365.0" layoutY="63.0" mnemonicParsing="false" onAction="#handleEditDepot" text="Edytuj zajezdnię" />
+                                          <Button layoutX="365.0" layoutY="99.0" mnemonicParsing="false" onAction="#handleDeleteDepot" text="Usuń zajezdnię" />
+                                       </children>
+                                    </HBox>
+                                    <SplitPane dividerPositions="0.35, 0.8" layoutX="190.0" layoutY="100.0" prefHeight="399.0" prefWidth="508.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="123.0">
+                                      <items>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                             <children>
+                                                <TableView fx:id="driversInDepotTab3" layoutX="-73.0" layoutY="-63.0" onMouseClicked="#showStuffWhenDriverInDepotClicked" prefHeight="158.0" prefWidth="56.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                                                   <columnResizePolicy>
+                                                      <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                   </columnResizePolicy>
+                                                   <columns>
+                                                      <TableColumn fx:id="idKierowcyCol3a" maxWidth="40.0" minWidth="40.0" prefWidth="40.0" text="ID" />
+                                                      <TableColumn fx:id="imieCol3a" minWidth="5.0" prefWidth="75.0" text="Imię" />
+                                                      <TableColumn fx:id="nazwiskoCol3a" minWidth="15.0" prefWidth="75.0" text="Nazwisko" />
+                                                   </columns>
+                                                   <contextMenu>
+                                                      <ContextMenu>
+                                                        <items>
+                                                            <MenuItem mnemonicParsing="false" onAction="#showDriverInTabPane" text="Wyświetl szczegóły zaznaczonego kierowcy" />
+                                                          <MenuItem mnemonicParsing="false" onAction="#handleNewDriverFromDepot" text="Zatrudnij nowego kierowcę" />
+                                                            <MenuItem mnemonicParsing="false" onAction="#handleEditDriverFromDepot" text="Edytuj dane zaznaczonego kierowcy" />
+                                                          <MenuItem mnemonicParsing="false" onAction="#handleDeleteDriverFromDepot" text="Zwolnij zaznaczonego kierowcę" />
+                                                        </items>
+                                                      </ContextMenu>
+                                                   </contextMenu>
+                                                </TableView>
+                                                <Label layoutX="14.0" layoutY="6.0" text="Kierowcy" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="5.0" />
+                                             </children>
+                                          </AnchorPane>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                             <children>
+                                                <TableView fx:id="vehiclesInDepotTab3a" layoutX="-28.0" layoutY="-15.0" onMouseClicked="#showStuffWhenVehicleInDepotClicked" prefHeight="158.0" prefWidth="136.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                                                   <columnResizePolicy>
+                                                      <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                   </columnResizePolicy>
+                                                   <columns>
+                                                      <TableColumn fx:id="nrRejestracyjnyCol3a" maxWidth="95.0" minWidth="95.0" prefWidth="95.0" text="Nr rejestracyjny" />
+                                                      <TableColumn fx:id="typCol3a" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" text="Typ" />
+                                                      <TableColumn fx:id="markaCol3a" minWidth="15.0" prefWidth="75.0" text="Marka" />
+                                                      <TableColumn fx:id="modelCol3a" minWidth="15.0" prefWidth="75.0" text="Model" />
+                                                   </columns>
+                                                   <contextMenu>
+                                                      <ContextMenu>
+                                                        <items>
+                                                            <MenuItem mnemonicParsing="false" onAction="#showVehicleInTabPane" text="Wyświetl szczegóły zaznaczonego pojazdu" />
+                                                            <MenuItem mnemonicParsing="false" onAction="#handleNewVehicleFromDepot" text="Zakup nowy pojazd" />
+                                                          <MenuItem mnemonicParsing="false" onAction="#handleEditVehicleFromDepot" text="Edytuj dane zaznaczonego pojazdu" />
+                                                          <MenuItem mnemonicParsing="false" onAction="#handleDeleteVehicleFromDepot" text="Sprzedaj zaznaczony pojazd" />
+                                                        </items>
+                                                      </ContextMenu>
+                                                   </contextMenu>
+                                                </TableView>
+                                                <Label layoutX="38.0" layoutY="6.0" text="Pojazdy" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="5.0" />
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="linesInDepotTab3a" prefHeight="374.0" prefWidth="141.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+                                                   <columnResizePolicy>
+                                                      <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                   </columnResizePolicy>
+                                                   <columns>
+                                                      <TableColumn fx:id="numerCol3a" prefWidth="75.0" text="Numer" />
+                                                      <TableColumn fx:id="typLiniiCol3a" prefWidth="75.0" text="Typ" />
+                                                   </columns>
+                                                   <contextMenu>
+                                                      <ContextMenu>
+                                                        <items>
+                                                            <MenuItem mnemonicParsing="false" onAction="#showLineInTabPane" text="Wyświetl szczegóły zaznaczonej linii" />
+                                                            <MenuItem mnemonicParsing="false" onAction="#handleNewLine" text="Nowa linia" />
+                                                            <MenuItem mnemonicParsing="false" onAction="#handleEditLineFromDepotTab" text="Edytuj dane zaznaczonej linii" />
+                                                            <MenuItem mnemonicParsing="false" onAction="#handleDeleteLineFromDepotTab" text="Usuń zaznaczoną linię" />
+                                                        </items>
+                                                      </ContextMenu>
+                                                   </contextMenu>
+                                                </TableView>
+                                                <Label layoutX="21.0" layoutY="6.0" text="Linie" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="5.0" />
+                                             </children>
+                                          </AnchorPane>
+                                      </items>
+                                    </SplitPane>
+                                    <Label layoutX="10.0" layoutY="99.0" text="Dodatkowe opcje dostępne po kliknięciu prawym przyciskiem myszy na zaznaczonym wierszu" />
+					               </children>
+					            </AnchorPane>
+					        </items>
+					      </SplitPane>
+					   </children>
+					</AnchorPane>
+
+              </content>
+            </Tab>
+            <Tab fx:id="vehiclesTabPane4" onSelectionChanged="#refreshVehiclesData" text="POJAZDY">
+              <content>
+                
+					<AnchorPane prefHeight="536.0" prefWidth="765.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+					   <children>
+					      <SplitPane dividerPositions="0.30275229357798167" layoutX="87.0" layoutY="14.0" prefHeight="455.0" prefWidth="682.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+					        <items>
+					          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+					               <children>
+					                  <TableView fx:id="pojazdTab4" layoutX="37.0" layoutY="76.0" prefHeight="452.0" prefWidth="217.0" AnchorPane.bottomAnchor="128.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+					                    <columns>
+					                      <TableColumn fx:id="nrRejestracyjnyCol4" maxWidth="95.0" minWidth="95.0" prefWidth="95.0" text="Nr rejestracyjny" />
+					                      <TableColumn fx:id="typCol4" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" text="Typ" />
+					                        <TableColumn fx:id="markaCol4" minWidth="15.0" prefWidth="75.0" text="Marka" />
+					                        <TableColumn fx:id="modelCol4" minWidth="15.0" prefWidth="75.0" text="Model" />
+					                    </columns>
+					                     <columnResizePolicy>
+					                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+					                     </columnResizePolicy>
+					                  </TableView>
+                                    <VBox layoutX="93.0" layoutY="389.0" spacing="5.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                                       <children>
+                                          <Label text="Szukaj:" />
+                                          <TextField fx:id="szukajTextField4" prefHeight="25.0" prefWidth="113.0" />
+                                          <Label layoutX="14.0" layoutY="365.0" text="Pokaż:" />
+                                          <CheckBox fx:id="tramCheckBox4" layoutX="14.0" layoutY="390.0" mnemonicParsing="false" onAction="#tramCheckBox4Chenged" selected="true" text="tramwaje" />
+                                          <CheckBox fx:id="busCheckBox4" layoutX="14.0" layoutY="416.0" mnemonicParsing="false" onAction="#busCheckBox4Chenged" selected="true" text="autobusy" />
+                                       </children>
+                                    </VBox>
+					               </children>
+					            </AnchorPane>
+					          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+					               <children>
+					                  <GridPane layoutX="40.0" layoutY="137.0" prefHeight="450.0" prefWidth="419.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="30.0">
+					                    <columnConstraints>
+					                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.0" minWidth="125.0" prefWidth="137.0" />
+					                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="333.0" minWidth="10.0" prefWidth="282.0" />
+					                    </columnConstraints>
+					                    <rowConstraints>
+					                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					                    </rowConstraints>
+					                     <children>
+					                        <Label text="Numer rejestracyjny" GridPane.halignment="RIGHT" />
+					                        <Label text="Typ" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+					                        <Label text="Marka" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+					                        <Label text="Model" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+					                        <Label text="Numer boczny" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+					                        <Label text="Rocznik" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
+					                        <Label text="Liczba siedzeń" GridPane.halignment="RIGHT" GridPane.rowIndex="7" />
+					                        <Label text="Max liczba pasażerów" GridPane.halignment="RIGHT" GridPane.rowIndex="8" />
+					                        <Label text="Biletomat" GridPane.halignment="RIGHT" GridPane.rowIndex="9" />
+					                        <Label text="Klimatyzacja" GridPane.halignment="RIGHT" GridPane.rowIndex="10" />
+					                        <Label text="Niskopodłogowy" GridPane.halignment="RIGHT" GridPane.rowIndex="11" />
+                                          <Label fx:id="nrRejestracyjnyLabel4" text="Label" GridPane.columnIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label fx:id="typLabel4" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label fx:id="markaLabel4" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label fx:id="modelLabel4" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label fx:id="nrBocznyLabel4" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label fx:id="rocznikLabel4" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label fx:id="liczbaSiedzenLabel4" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label fx:id="maxLiczbaPasazerowLabel4" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <CheckBox fx:id="biletomatCheckBox4" mnemonicParsing="false" onAction="#ignoreSelectionBiletomat" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </CheckBox>
+                                          <CheckBox fx:id="klimatyzacjaCheckBox4" mnemonicParsing="false" onAction="#ignoreSelectionKlima" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </CheckBox>
+                                          <CheckBox fx:id="niskopodlogowyCheckBox4" mnemonicParsing="false" onAction="#ignoreSelectionNisko" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </CheckBox>
+                                          <Label fx:id="zuzyciePraduLabel4tekst" text="Zużycie prądu (kWh/km)" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
+                                          <Label fx:id="zuzyciePraduLabel4" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label fx:id="spalanieLabel4" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label fx:id="spalanieLabel4tekst" text="Spalanie (L/100km)" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
+                                          <Label text="Zajezdnia" GridPane.halignment="RIGHT" GridPane.rowIndex="12" />
+                                          <Label text="Linia" GridPane.halignment="RIGHT" GridPane.rowIndex="13" />
+                                          <Label text="Kierowca" GridPane.halignment="RIGHT" GridPane.rowIndex="14" />
+                                          <Label fx:id="zajezdniaLabel4" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="12">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin></Label>
+                                          <Label fx:id="liniaLabel4" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="13">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin></Label>
+                                          <Label fx:id="kierowcaLabel4" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="14">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin></Label>
+					                     </children>
+					                  </GridPane>
+                                    <HBox spacing="5.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Button layoutX="107.0" layoutY="1.0" mnemonicParsing="false" onAction="#handleNewVehicleFromVehicleTabPane" text="Nowy pojazd" AnchorPane.topAnchor="0.0" />
+                                          <Button layoutX="185.0" mnemonicParsing="false" onAction="#handleEditVehicleFromVehiclePane" text="Edytuj" />
+                                          <Button layoutX="281.0" mnemonicParsing="false" onAction="#handleDeleteVehicleFromVehiclePane" text="Usuń" />
+                                       </children>
+                                    </HBox>
+					                  <Label layoutX="14.0" layoutY="6.0" text="SZCZEGÓŁY" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="3.0">
+					                     <font>
+					                        <Font name="System Bold" size="14.0" />
+					                     </font>
+					                  </Label>
+					               </children>
+					            </AnchorPane>
+					        </items>
+					      </SplitPane>
+					   </children>
+					</AnchorPane>
+
+              </content>
+            </Tab>
+            <Tab fx:id="driversTabPane5" onSelectionChanged="#refreshDriversData" text="KIEROWCY">
+              <content>
+                
+					<AnchorPane prefHeight="536.0" prefWidth="765.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+					   <children>
+					      <SplitPane dividerPositions="0.26605504587155965" layoutX="87.0" layoutY="14.0" prefHeight="455.0" prefWidth="682.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+					        <items>
+					          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+					               <children>
+					                  <TableView fx:id="kierowcaTab5" layoutX="37.0" layoutY="76.0" prefHeight="452.0" prefWidth="217.0" AnchorPane.bottomAnchor="128.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+					                    <columns>
+					                      <TableColumn fx:id="idKierowcyCol5" maxWidth="40.0" minWidth="40.0" prefWidth="40.0" text="ID" />
+					                      <TableColumn fx:id="imieCol5" minWidth="5.0" prefWidth="75.0" text="Imię" />
+					                        <TableColumn fx:id="nazwiskoCol5" minWidth="15.0" prefWidth="75.0" text="Nazwisko" />
+					                    </columns>
+					                     <columnResizePolicy>
+					                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+					                     </columnResizePolicy>
+					                  </TableView>
+                                    <VBox spacing="5.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                                       <children>
+                                          <Label text="Szukaj:" />
+                                          <TextField fx:id="szukajTextField5" prefHeight="25.0" prefWidth="113.0" />
+                                          <Label layoutX="14.0" layoutY="365.0" text="Pokaż:" />
+                                          <CheckBox fx:id="tramCheckBox5" layoutX="14.0" layoutY="390.0" mnemonicParsing="false" onAction="#tramCheckBox5Chenged" selected="true" text="motorniczych" />
+                                          <CheckBox fx:id="busCheckBox5" layoutX="14.0" layoutY="416.0" mnemonicParsing="false" onAction="#busCheckBox5Chenged" selected="true" text="kierowców autobusów" />
+                                       </children>
+                                    </VBox>
+					               </children>
+					            </AnchorPane>
+					          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+					               <children>
+                                    <HBox spacing="5.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Button layoutX="107.0" layoutY="1.0" mnemonicParsing="false" onAction="#handleNewDriverFromDriverPane" text="Nowy kierowca" AnchorPane.topAnchor="0.0" />
+                                          <Button layoutX="185.0" mnemonicParsing="false" onAction="#handleEditDriverFromDriverPane" text="Edytuj" />
+                                          <Button layoutX="281.0" mnemonicParsing="false" onAction="#handleDeleteDriverFromDriverPane" text="Usuń" />
+                                       </children>
+                                    </HBox>
+					                  <GridPane layoutX="40.0" layoutY="137.0" prefHeight="210.0" prefWidth="452.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="30.0">
+					                    <columnConstraints>
+					                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="125.0" minWidth="125.0" prefWidth="125.0" />
+					                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="333.0" minWidth="10.0" prefWidth="75.0" />
+					                    </columnConstraints>
+					                    <rowConstraints>
+					                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					                    </rowConstraints>
+					                     <children>
+					                        <Label text="ID" GridPane.halignment="RIGHT" />
+					                        <Label text="Imię" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+					                        <Label text="Nazwisko" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+					                        <Label text="Prawo jazdy" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+					                        <Label text="Zajezdnia" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+					                        <Label text="Linia" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
+					                        <Label text="Pojazd" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
+                                          <Label fx:id="idKierowcyLabel5" text="Label" GridPane.columnIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label fx:id="imieLabel5" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label fx:id="nazwiskoLabel5" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label fx:id="prawoJazdyLabel5" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label fx:id="idZajezdniLabel5" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label fx:id="numerLabel5" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label fx:id="nrRejestracyjnyLabel5" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+					                     </children>
+					                  </GridPane>
+					                  <Label layoutX="14.0" layoutY="6.0" text="SZCZEGÓŁY" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="3.0">
+					                     <font>
+					                        <Font name="System Bold" size="14.0" />
+					                     </font>
+					                  </Label>
+					               </children>
+					            </AnchorPane>
+					        </items>
+					      </SplitPane>
+					   </children>
+					</AnchorPane>
+
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
